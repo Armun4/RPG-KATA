@@ -6,8 +6,18 @@ class Character {
     public $health = 1000;
     public $level = 1;
     public $isAlive = true;
-    public function attacking(Character $characterVictim, int $damage):void
-    {
+    public $range;
+    public $distance = 0; 
+    public $faction="";
+    public function attacking(Character $characterVictim, int $damage, int $distance):void
+    {   
+        if ($this->faction === $characterVictim->faction && $this->faction!=""){
+            return;
+        }
+
+        if ($this->range < $distance) {
+            return;
+        }
         if ($this === $characterVictim){
             return;
         }
@@ -17,24 +27,27 @@ class Character {
         if ($this->level - $characterVictim->level >= 5 && $characterVictim->level != $this->level){
             $damage = $damage * 2;
         }
+        
         $characterVictim->health -= $damage;
         if($characterVictim->health <= 0) {
             $characterVictim->isAlive = false;
             $characterVictim->health = 0;
         }
+        
     }
     public function healing(Character $characterVictim, int $heal):void 
     {
         if ($this != $characterVictim) {
-            return;
+            return; //change this if
         }
-        if($characterVictim->health > 0) {
-        $characterVictim->health += $heal;
+        if ($characterVictim->health > 0) {
+            $characterVictim->health += $heal;
 
-        if($characterVictim->health > 1000) {
-            $characterVictim->health = 1000;
+            if ($characterVictim->health > 1000) {
+                $characterVictim->health = 1000;
+            }
         }
-    }
-    }
+   }
+
 
 }
