@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class Character {
     public $health = 1000;
     public $level = 1;

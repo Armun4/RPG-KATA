@@ -1,6 +1,7 @@
 {
+    "name": "omen/rpg-kata",
     "require": {
-        "phpunit/phpunit": "^9"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
@@ -10,6 +11,13 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests"
+        },
+
+    "authors": [
+        {
+            "name": "Armun4",
+            "email": "82039854+Armun4@users.noreply.github.com"
         }
-    }
+    ]
+}
 }

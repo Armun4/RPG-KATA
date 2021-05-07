@@ -5,28 +5,7 @@ namespace Tests;
 use App\Character;
 use PHPUnit\Framework\TestCase;
 
-class CharacterTest extends TestCase 
-{
-    /*
-    public function testCharacterHas1000HealthWhenCreated()
-    {
-        $character = new Character();
-        $result = $character-> health;
-        $this-> assertEquals(1000, $result);
-    }
-    public function testCharacterStartLevelOne()
-    {
-        $character = new Character();
-        $result = $character-> level;
-        $this-> assertEquals(1, $result);
-    }
-    public function testCharacterIsAlive()
-    {
-        $character = new Character();
-        $result = $character-> isAlive;
-        $this-> assertTrue($result);
-    }
-    */
+class CharacterTest extends TestCase{
     public function testCharacterStartingWit1000Andlevel1AndIsAlive() 
     {
         $character = new Character();
